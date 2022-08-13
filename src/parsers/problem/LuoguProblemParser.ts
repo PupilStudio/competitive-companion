@@ -13,7 +13,7 @@ export class LuoguProblemParser extends Parser {
 
     const data = this.getProblemData(html);
 
-    task.setName(`${data.pid} ${data.title}`.trim());
+    task.setName(`${data.pid}`.trim().replace('_',''));
 
     task.setTimeLimit(Math.max(...data.limits.time));
     task.setMemoryLimit(Math.floor(Math.max(...data.limits.memory) / 1024));
